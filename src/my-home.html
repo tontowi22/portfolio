@@ -1,0 +1,86 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-home">
+  <template>
+    <style include="shared-styles">
+      .horizontal{
+        @apply(--layout-horizontal);
+      }
+      .vertical{
+          @apply(--layout-vertical);
+      }
+      .content{
+        width: 70%;
+        margin-left: 100px;
+      }
+      paper-material.main{
+        height: 100%;
+        width: 50%;
+      }
+      hr{
+        width: 60%;
+      }
+      label ,p {
+        @apply(--paper-font-common-base);
+      }
+      label{
+        margin-top: 100px;
+        text-align: center;
+      }
+      paper-button{
+        color:white;
+        margin-left: 100px;
+        width: 20%;
+        height: 40px;
+      }
+      paper-button.profile{
+        background-color: #27B6D0;
+      }
+      paper-button.tutorial{
+        margin-left: 10px;
+        background-color: #C94D9D;
+      }
+    </style>
+    <div class="horizontal">
+      <paper-material elevation="1" class="main" style="background-color:#eeeeee;">
+          <iron-image src="../images/back.png" style="width:600px; height:670px;" sizing="contain" ></iron-image>
+      </paper-material>
+      <paper-material elevation="3" class="main">
+        <div class="vertical">
+          <label>About</label>
+          <hr>
+          <paper-material elevation="1" class="content">
+          <p>What is Lorem Ipsum?
+             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+             Why do we use it</p>
+        </paper-material>
+        </div>
+        <a name="view2" href="/profile"><paper-button raised class="profile" text="Profile"></paper-button></a>
+        <a name="view2" href="/tutorial"><paper-button raised class="tutorial" text="Tutorial"></paper-button></a>
+      </paper-material>
+    </div>
+  </template>
+
+  <script>
+    class MyHome extends Polymer.Element {
+      static get is() { return 'my-home'; }
+    }
+
+    window.customElements.define(MyHome.is, MyHome);
+  </script>
+</dom-module>
