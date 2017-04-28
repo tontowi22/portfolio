@@ -142,7 +142,7 @@ Custom property | Description | Default
       }
     </style>
 
-    <content></content>
+    <content>{{text}}</content>
   </template>
 
   <script>
@@ -157,6 +157,9 @@ Custom property | Description | Default
         /**
          * If true, the button should be styled with a shadow.
          */
+        text:{
+          type:String,
+        },
         raised: {
           type: Boolean,
           reflectToAttribute: true,
